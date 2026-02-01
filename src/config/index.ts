@@ -4,7 +4,7 @@ dotenv.config();
 export const config = {
   // Server
   nodeEnv: process.env.NODE_ENV || 'development',
-  port: parseInt(process.env.BACKEND_PORT || '5000', 10),
+  port: parseInt(process.env.PORT || process.env.BACKEND_PORT || '5000', 10),
   frontendUrl: process.env.FRONTEND_URL || 'http://localhost:3000',
   backendUrl: process.env.BACKEND_URL || 'http://localhost:5000',
   
@@ -39,5 +39,5 @@ export const config = {
   },
   
   // CORS
-  corsOrigin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  corsOrigin: process.env.CORS_ORIGIN || process.env.FRONTEND_URL || 'http://localhost:3000',
 };
